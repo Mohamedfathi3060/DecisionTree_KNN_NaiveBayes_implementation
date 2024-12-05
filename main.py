@@ -68,19 +68,19 @@ data = DA.loadCSV()
 
 # check whether there are missing values
 missingValues = DA.checkMissingValues(data)
-print(missingValues)
+# print(missingValues)
 
 # droppedMissingData = DA.dropMissingValues(data)
 replacedMissingData = DA.replaceMissingValues(data)
 # print("check missing after drop =>\n", DA.checkMissingValues((droppedMissingData)))
-print("check missing after replace =>\n",DA.checkMissingValues((replacedMissingData)))
+# print("check missing after replace =>\n",DA.checkMissingValues((replacedMissingData)))
 
 # print("Dropped Missing =>\n",droppedMissingData);
-print("Replaced with Average =>\n",replacedMissingData);
+# print("Replaced with Average =>\n",replacedMissingData);
 
 # # check whether numeric features have the same scale
 dataScaleChecking = DA.checkScale(data)
-print("Check Scalling =>\n",dataScaleChecking)
+# print("Check Scalling =>\n",dataScaleChecking)
 
 # # visualize a pairplot in which diagonal subplots are histograms
 # # DA.showPairPlot(data)
@@ -90,19 +90,19 @@ print("Check Scalling =>\n",dataScaleChecking)
 
 # the features and targets are separated
 X,Y= DA.seperateTargets(replacedMissingData,"Rain")
-print("X =>\n", X)
-print("Y =>\n", Y)
+# print("X =>\n", X)
+# print("Y =>\n", Y)
 
 # the data is shuffled and split into training and testing sets
-xTrain,xTest,yTrain,yTest = DA.split(X,Y,0.3)
-print("xTrain =>\n", xTrain)
-print("xTest =>\n", xTest)
-print("yTrain =>\n", yTrain)
-print("yTest =>\n", yTest)
+xTrain,xTest,yTrain,yTest = DA.split(X,Y,0.2)
+# print("xTrain =>\n", xTrain)
+# print("xTest =>\n", xTest)
+# print("yTrain =>\n", yTrain)
+# print("yTest =>\n", yTest)
 
 
 # numeric features are scaled
 xTrain = DA.scale(xTrain)
 xTest = DA.transform(xTest)
-print("xTrain =>\n", xTrain)
-print("xTest =>\n", xTest)
+# print("xTrain =>\n", xTrain)
+# print("xTest =>\n", xTest)
