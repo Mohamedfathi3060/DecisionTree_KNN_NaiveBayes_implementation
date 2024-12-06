@@ -39,9 +39,9 @@ class KNN:
             classA = 0
             classB = 0
             for err, idx in MINs:
-                if self.y_train[idx] == "no rain":
+                if self.y_train[idx] == 0:
                     classA += 1
-                elif self.y_train[idx] == "rain":
+                elif self.y_train[idx] == 1:
                     classB += 1
                 else:
                     print("error")
@@ -49,9 +49,9 @@ class KNN:
             # print("rain ", classB," Sample")
             # print("no-rain",classA, " Sample")
             if classA >= classB:
-                y_test[j] = "no rain"
+                y_test[j] = 0
             else:
-                y_test[j] = "rain"
+                y_test[j] = 1
         return y_test
 
 

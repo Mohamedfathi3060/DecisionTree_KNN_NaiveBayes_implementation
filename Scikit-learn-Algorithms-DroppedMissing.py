@@ -3,6 +3,7 @@ from Custom_KNN import KNN as KNN_Scratch
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, recall_score, precision_score
+import matplotlib.pyplot as plt
 import matplotlib
 from sklearn import tree
 import pandas as pd
@@ -33,13 +34,14 @@ DecisionTree = DecisionTree.fit(xTrain, yTrain)
 DecisionTree_predictions = DecisionTree.predict(xTest)
 print("Decision Tree Score {Test Data}: ", DecisionTree.score(xTest,yTest))
 
-# # Show Decision Tree plot
-# fig = plt.figure(figsize=(12, 8))
-# tree.plot_tree(DecisionTree, filled=True)
-# plt.show()
+# Show Decision Tree plot
+fig = plt.figure(figsize=(12, 8))
+tree.plot_tree(DecisionTree, filled=True)
+plt.show()
 
 # Metrics
 metrics = {
+    # "Model": ["kNN", "KNN_Scratch"],
     "Model": ["kNN", "KNN_Scratch", "Naive Bayes", "Decision Tree"],
     "Accuracy": [
         accuracy_score(yTest, KNN_prediction),
